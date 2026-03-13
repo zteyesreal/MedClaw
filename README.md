@@ -1,12 +1,12 @@
 # MedClaw 医疗智能助手
 
-[!\[Version\](https://img.shields.io/badge/version-1.0.0-blue.svg null)](https://github.com/your-org/medclaw)
-[!\[Python\](https://img.shields.io/badge/python-3.8+-green.svg null)](https://www.python.org/)
-[!\[License\](https://img.shields.io/badge/license-MIT-yellow.svg null)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/your-org/medclaw)
+[![Python](https://img.shields.io/badge/python-3.8+-green.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 
 **MedClaw** 是一个专为医疗场景设计的智能任务执行系统，基于 OpenClaw 框架构建，提供 9 大医疗职业场景的标准化任务模板和动态任务调整能力。
 
-***
+---
 
 ## 🌟 核心特性
 
@@ -17,7 +17,7 @@
 - **🧪 完整测试套件**：Mock 数据支持，无需真实接口即可测试
 - **📚 完善文档**：API 文档、架构说明、使用指南
 
-***
+---
 
 ## 🏗️ 系统架构
 
@@ -39,7 +39,7 @@ MedClaw/
 └── README.md                      # 本文件
 ```
 
-***
+---
 
 ## 🚀 快速开始
 
@@ -66,30 +66,30 @@ python start_openclaw_mode.py
 
 ### 4. 访问系统
 
-- **Web UI**: <http://localhost:8001>
+- **Web UI**: http://localhost:8001
 - **API 文档**: 见 `docs/API_DOCUMENTATION.md`
 
-***
+---
 
 ## 📊 功能模块
 
 ### 9 大医疗职业场景
 
-| 职业         | 模块 ID                      | 任务数 | 核心功能             |
-| ---------- | -------------------------- | --- | ---------------- |
-| 👨‍⚕️ 临床医生 | `clinician`                | 3   | 门诊接诊、住院查房、急诊抢救   |
-| ✅ 病历质控员    | `quality_controller`       | 2   | 运行病历质控、终末病历评审    |
-| 💰 医保审核员   | `insurance_auditor`        | 2   | DRG 分组审核、费用合规性检查 |
-| 🖼️ 放射科医师  | `radiologist`              | 2   | CT 报告书写、急诊影像会诊   |
-| 💊 临床药师    | `clinical_pharmacist`      | 2   | 处方审核、抗菌药物专项点评    |
-| 📊 科研人员    | `researcher`               | 2   | 临床数据提取、统计分析      |
-| 👩‍⚕️ 护士   | `nurse`                    | 2   | 入院评估、执行医嘱        |
-| 🚑 急诊科医师   | `emergency_physician`      | 3   | 急诊分诊、心肺复苏、创伤评估   |
-| ♿ 康复科医师    | `rehabilitation_physician` | 3   | 康复评估、运动疗法、作业疗法   |
+| 职业 | 模块 ID | 任务数 | 核心功能 |
+|------|---------|--------|----------|
+| 👨‍⚕️ 临床医生 | `clinician` | 3 | 门诊接诊、住院查房、急诊抢救 |
+| ✅ 病历质控员 | `quality_controller` | 2 | 运行病历质控、终末病历评审 |
+| 💰 医保审核员 | `insurance_auditor` | 2 | DRG 分组审核、费用合规性检查 |
+| 🖼️ 放射科医师 | `radiologist` | 2 | CT 报告书写、急诊影像会诊 |
+| 💊 临床药师 | `clinical_pharmacist` | 2 | 处方审核、抗菌药物专项点评 |
+| 📊 科研人员 | `researcher` | 2 | 临床数据提取、统计分析 |
+| 👩‍⚕️ 护士 | `nurse` | 2 | 入院评估、执行医嘱 |
+| 🚑 急诊科医师 | `emergency_physician` | 3 | 急诊分诊、心肺复苏、创伤评估 |
+| ♿ 康复科医师 | `rehabilitation_physician` | 3 | 康复评估、运动疗法、作业疗法 |
 
 **总计：21 个专业任务模板**
 
-***
+---
 
 ## 🔧 核心功能
 
@@ -125,19 +125,16 @@ task.steps[0]['params']['patient_id'] = 'P999'
 ### 3. 标准化 API 接口
 
 **获取模块列表**
-
 ```bash
 curl http://localhost:8001/api/modules
 ```
 
 **获取任务模板**
-
 ```bash
 curl http://localhost:8001/api/tasks
 ```
 
 **执行任务**
-
 ```bash
 curl -X POST http://localhost:8001/api/execute_task \
   -H "Content-Type: application/json" \
@@ -152,7 +149,7 @@ curl -X POST http://localhost:8001/api/execute_task \
 
 详见 [API 文档](docs/API_DOCUMENTATION.md)
 
-***
+---
 
 ## 🧪 测试
 
@@ -163,7 +160,6 @@ python tests/test_all_functions.py
 ```
 
 **测试结果示例：**
-
 ```
 ================================================================================
                          MedClaw 完整功能测试
@@ -215,19 +211,19 @@ task = Task(
 result = await executor.execute_task(task)
 ```
 
-***
+---
 
 ## 📖 文档
 
-| 文档       | 路径                                                                 | 描述                            |
-| -------- | ------------------------------------------------------------------ | ----------------------------- |
-| API 接口文档 | [docs/API\_DOCUMENTATION.md](docs/API_DOCUMENTATION.md)            | 完整的 REST API 和 WebSocket 接口说明 |
-| 架构对比分析   | [MedClaw\_vs\_OpenClaw 深度对比分析.md](MedClaw_vs_OpenClaw%20深度对比分析.md) | MedClaw 与 OpenClaw 的详细对比      |
-| 操作差异详解   | [MedClaw\_vs\_OpenClaw\_操作差异详解.md](MedClaw_vs_OpenClaw_操作差异详解.md)  | 实际操作层面的差异分析                   |
-| 可靠性分析    | [为什么规范化的 MedClaw 更可靠.md](为什么规范化的%20MedClaw%20更可靠.md)               | 规范化设计的优势分析                    |
-| 模块一致性验证  | [模块一致性验证报告.md](模块一致性验证报告.md)                                       | 前后端模块一致性验证                    |
+| 文档 | 路径 | 描述 |
+|------|------|------|
+| API 接口文档 | [docs/API_DOCUMENTATION.md](docs/API_DOCUMENTATION.md) | 完整的 REST API 和 WebSocket 接口说明 |
+| 架构对比分析 | [MedClaw_vs_OpenClaw 深度对比分析.md](MedClaw_vs_OpenClaw%20深度对比分析.md) | MedClaw 与 OpenClaw 的详细对比 |
+| 操作差异详解 | [MedClaw_vs_OpenClaw_操作差异详解.md](MedClaw_vs_OpenClaw_操作差异详解.md) | 实际操作层面的差异分析 |
+| 可靠性分析 | [为什么规范化的 MedClaw 更可靠.md](为什么规范化的%20MedClaw%20更可靠.md) | 规范化设计的优势分析 |
+| 模块一致性验证 | [模块一致性验证报告.md](模块一致性验证报告.md) | 前后端模块一致性验证 |
 
-***
+---
 
 ## 💡 使用示例
 
@@ -302,50 +298,46 @@ result = requests.post(
 ).json()
 ```
 
-***
+---
 
 ## 🏥 真实医疗场景参数
 
 测试脚本中使用的参数基于真实医疗场景：
 
-| 职业    | 参数示例                                          | 真实场景             |
-| ----- | --------------------------------------------- | ---------------- |
-| 病历质控员 | `department`: "心内科", `record_count`: 15       | 质控心内科15份运行病历     |
-| 医保审核员 | `month`: "2026-03", `case_count`: 50          | 审核3月份50个病例的DRG分组 |
-| 放射科医师 | `body_part`: "胸部", `count`: 10                | 书写10例胸部CT报告      |
-| 临床药师  | `department`: "呼吸科", `prescription_count`: 30 | 审核呼吸科30张处方       |
-| 科研人员  | `disease`: "高血压", `sample_size`: 100          | 提取100例高血压患者的临床数据 |
-| 护士    | `patient_name`: "张三"                          | 为张三完成入院护理评估      |
+| 职业 | 参数示例 | 真实场景 |
+|------|----------|----------|
+| 病历质控员 | `department`: "心内科", `record_count`: 15 | 质控心内科15份运行病历 |
+| 医保审核员 | `month`: "2026-03", `case_count`: 50 | 审核3月份50个病例的DRG分组 |
+| 放射科医师 | `body_part`: "胸部", `count`: 10 | 书写10例胸部CT报告 |
+| 临床药师 | `department`: "呼吸科", `prescription_count`: 30 | 审核呼吸科30张处方 |
+| 科研人员 | `disease`: "高血压", `sample_size`: 100 | 提取100例高血压患者的临床数据 |
+| 护士 | `patient_name`: "张三" | 为张三完成入院护理评估 |
 
-***
+---
 
 ## 🔍 项目亮点
 
 ### 1. 规范化设计
-
 - 预定义标准任务模板
 - 符合医疗行业规范
 - 可预测的执行结果
 
 ### 2. 高可靠性
-
 - 100% 测试通过率
 - 稳定的执行流程
 - 完善的错误处理
 
 ### 3. 易于扩展
-
 - 模块化架构
 - 清晰的接口定义
 - 完善的文档支持
 
 ### 4. 无需真实数据
-
 - Mock 数据支持完整测试
 - 无需对接真实医疗系统
 - 适合开发和演示环境
 
-***
+---
 
 ## 🤝 贡献指南
 
@@ -359,8 +351,21 @@ result = requests.post(
 4. 推送分支 (`git push origin feature/AmazingFeature`)
 5. 创建 Pull Request
 
+---
 
-***
+## 📄 许可证
+
+本项目采用 [MIT](LICENSE) 许可证
+
+---
+
+## 📞 联系方式
+
+- 项目主页：[GitHub](https://github.com/your-org/medclaw)
+- 问题反馈：[Issues](https://github.com/your-org/medclaw/issues)
+- 文档地址：[Docs](docs/)
+
+---
 
 **MedClaw v1.0.0** - 让医疗工作更智能、更规范、更可靠
 

@@ -1,0 +1,50 @@
+app:
+  name: "MedClaw"
+  debug: true
+
+database:
+  url: "sqlite:///./medclaw.db"
+
+mcp:
+  server_url: "http://localhost:8001"
+  api_key: "your-mcp-api-key"
+  timeout: 30
+
+qqbot:
+  type: "go-cqhttp"
+  websocket: "ws://127.0.0.1:6700"
+
+modules:
+  enabled:
+    - medical_record
+    - medical_quality
+    - insurance_analysis
+    - clinical_prediction
+    - ai_reading
+    - research_analysis
+    - paper_analysis
+  
+  medical_record:
+    template_dir: "./templates/medical_record"
+  
+  medical_quality:
+    rule_dir: "./rules/medical_quality"
+  
+  insurance_analysis:
+    drg_dict_path: "./data/drg_dict.json"
+    rule_dir: "./rules/insurance"
+  
+  clinical_prediction:
+    model_dir: "./models/clinical"
+  
+  ai_reading:
+    model_name: "resnet50"
+    weights_path: "./models/ai_reading/model.pth"
+    device: "cpu"
+    dicom_cache: "./cache/dicom"
+  
+  research_analysis:
+    data_dir: "./data/research"
+  
+  paper_analysis:
+    cache_dir: "./cache/papers"

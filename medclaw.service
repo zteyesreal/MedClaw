@@ -1,0 +1,26 @@
+[Unit]
+Description=MedClaw Medical Automation Assistant
+After=network.target
+
+[Service]
+Type=simple
+User=medclaw
+WorkingDirectory=/opt/medclaw
+Environment="PATH=/opt/medclaw/venv/bin"
+ExecStart=/opt/medclaw/venv/bin/python daemon.py start
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=medclaw
+
+# 资源限制
+LimitNOFILE=65535
+LimitNPROC=4096
+
+# 安全设置
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
